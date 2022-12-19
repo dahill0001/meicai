@@ -12,7 +12,11 @@
             <div class="col-md-8 mx-auto">
                 <h2>Upload File Example</h2>
                 <p th:text="${message}" th:if="${message ne null}" class="alert alert-primary"></p>
-                <form method="post" th:action="@{/upload}" enctype="multipart/form-data">
+                <h2>Flesh Score</h2>
+                <p th:text="${fleshScore}" th:if="${fleshScore ne null}" class="alert alert-primary"></p>
+                <h2>Word Frequencies Score</h2>
+                <p th:text="${wfScore}" th:if="${wfScore ne null}" class="alert alert-primary"></p>
+                <form method="post" th:action="@{/checkFileScore}" enctype="multipart/form-data">
                     <div class="form-group">
                         <input type="file" name="file" class="form-control-file">
                     </div>

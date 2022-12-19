@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Mei Cai Document check</title>
+    <link rel="stylesheet" th:href="@{bootstrap/4.2.1/css/bootstrap.min.css}"/>
+</head>
+<body>
+
+<section class="my-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <h2>MeiCai Document check</h2>
+                <p th:text="${message}" th:if="${message ne null}" class="alert alert-primary"></p>
+
+                <form method="post" th:action="@{/checkFileScore}" enctype="multipart/form-data" id="singleUploadForm">
+                    <div class="form-group">
+                        <input type="file" name="file" class="form-control-file" id="singleFileUploadInput">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Upload File</button>
+                </form>
+                <p></p>
+                <h3>Result</h3>
+                 <div class="upload-response">
+                    <div id="singleFileUploadError"></div>
+                    <div id="singleFileUploadSuccess"></div>
+                 </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script type="text/javascript" th:src="@{bootstrap/4.2.1/js/bootstrap.min.js}"></script>
+<script type="text/javascript" th:src="@{js/main.js}"></script>
+</body>
+</html>
